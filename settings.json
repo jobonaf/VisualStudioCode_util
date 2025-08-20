@@ -1,94 +1,101 @@
 {
-  "window.menuBarVisibility": "visible",
-  "security.allowedUNCHosts": [
-    "regione.fvg.it"
-  ],
-  "git.autofetch": true,
-  // Cartella di output
-  "latex-workshop.latex.outDir": "./out",
-  "latex-workshop.latex.clean.subfolder.enabled": true,
-  // Definizione strumenti
-  "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk-lualatex",
-      "command": "powershell",
-      "args": [
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "C:/scratch/docs/_util/latexmk.ps1",
-        "-lualatex",
-        "-auxdir",
-        "build",
-        "-outdir",
-        "out",
-        "-pdf",
-        "%DOCFILE%"
-      ]
-    },
-    {
-      "name": "latexmk-clean",
-      "command": "powershell",
-      "args": [
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "C:/scratch/docs/_util/latexmk.ps1",
-        "-c",
-        "%DOCFILE%"
-      ]
+    // Impostazioni generali
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "window.menuBarVisibility": "visible",
+    // Sicurezza
+    "security.workspace.trust.enabled": true,
+    "security.allowedUNCHosts": [
+        "regione.fvg.it"
+    ],
+    // Git
+    "git.enabled": true,
+    "git.autofetch": true,
+    // Cartella di output
+    "latex-workshop.latex.outDir": "./out",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    // Definizione strumenti
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-lualatex",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "C:/scratch/docs/_util/latexmk.ps1",
+                "-lualatex",
+                "-auxdir",
+                "build",
+                "-outdir",
+                "out",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk-clean",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "C:/scratch/docs/_util/latexmk.ps1",
+                "-c",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    // Definizione ricette
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatexmk",
+            "tools": [
+                "latexmk-lualatex"
+            ]
+        }
+    ],
+    // Ricetta di default
+    "latex-workshop.latex.recipe.default": "lualatexmk",
+    // Tipi di file da pulire
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.synctex.gz"
+    ],
+    // Build automatico al salvataggio
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    // Visualizzazione PDF
+    "latex-workshop.view.pdf.viewer": "tab",
+    // Proxy (se necessario)
+    "http.proxy": "http://proxy-bc.regione.fvg.it:8002",
+    "http.proxyStrictSSL": false,
+    // Trust workspace
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "latex": true
     }
-  ],
-  // Definizione ricette
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "lualatexmk",
-      "tools": [
-        "latexmk-lualatex"
-      ]
-    }
-  ],
-  // Ricetta di default
-  "latex-workshop.latex.recipe.default": "lualatexmk",
-  // Tipi di file da pulire
-  "latex-workshop.latex.clean.fileTypes": [
-    "*.aux",
-    "*.bbl",
-    "*.blg",
-    "*.idx",
-    "*.ind",
-    "*.lof",
-    "*.lot",
-    "*.out",
-    "*.toc",
-    "*.acn",
-    "*.acr",
-    "*.alg",
-    "*.glg",
-    "*.glo",
-    "*.gls",
-    "*.fls",
-    "*.log",
-    "*.fdb_latexmk",
-    "*.snm",
-    "*.nav",
-    "*.synctex.gz"
-  ],
-  // Build automatico al salvataggio
-  "latex-workshop.latex.autoBuild.run": "onSave",
-  // Visualizzazione PDF
-  "latex-workshop.view.pdf.viewer": "tab",
-  // Proxy (se necessario)
-  "http.proxy": "http://proxy-bc.regione.fvg.it:8002",
-  "http.proxyStrictSSL": false,
-  // Trust workspace
-  "security.workspace.trust.untrustedFiles": "open",
-  "editor.minimap.enabled": false,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "latex": true
-  }
 }
